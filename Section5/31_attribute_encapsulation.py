@@ -1,7 +1,7 @@
 """
 Attribute encapsulation via classic getter/setter paradigm
 
-- vary un-pythonic
+- very un-pythonic
 """
 
 
