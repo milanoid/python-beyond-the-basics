@@ -10,6 +10,15 @@ var1 + var2
 is the same as
 var1.__add__(var2)
 
+--
+
+Core syntax resolutions
+                so called Magic Methods
+'abc' in var    var.__contains__('abc')
+var == 'abc'    var.__eq__('abc')
+var[1]          var.__getitem__(1)
+len(var)        var.__len__()
+print(var)      var.__repr__()
 """
 
 
