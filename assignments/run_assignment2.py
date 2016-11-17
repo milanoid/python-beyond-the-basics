@@ -1,4 +1,4 @@
-from assignment2 import WriteFile, CSVFormatter, LogFormatter
+from assignments.assignment2 import CSVFormatter, LogFormatter
 
 log = LogFormatter("log.txt")
 log.write("some text")
