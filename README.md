@@ -42,3 +42,18 @@ a,b,c,d
 ```
 
 - ```WriteFile(object)```:  the parent class to both LogFile and DelimFile, does 1work that is common between them.   Not intended to be instantiated.
+
+## Assignment 3
+
+In this assignment we're going to leverage the convenience of a dictionary to power a configuration file, which is simply a file of key-value pairs.  
+
+The structure of a config file could take many forms, and one of them is a simple key=value syntax, with one key/value pair per line.  This is simple and straightforward, so we'll use it.  
+
+What's great about using a built-in structure like a dictionary as the interface to the configuration file is that any Python programmer will immediately know how to use it.  The instructions are so simple you almost don't need documentation:  "create a new ConfigDict object, then read and write keys and values as desired" -- that's it
+
+Our config file should looks like this:
+```
+sql_query=SELECT this FROM that WHERE condition
+email_to=me@mydomain.com
+num_retries=5
+```

@@ -1,5 +1,5 @@
+secret_password=^$#&^&
 hosntame=localhost
+username=milanoid
 port=port
 password=secret
-username=milanoid
-secret_password=^$#&^&
