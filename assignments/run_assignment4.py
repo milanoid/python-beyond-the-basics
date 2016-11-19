@@ -6,7 +6,7 @@
 import sys
 from assignments.assignment3 import ConfigDict
 
-cd = ConfigDict('C:\ss\config_file.txt')
+cd = ConfigDict('config_file.txt')
 
 # if 2 arguments on the command line,
 # set a key and value in the object's dictionary
