@@ -1,1 +1,9 @@
-{"hostname": "localhost", "credentials": {"password": "secret", "username": "milanoid"}, "port": 80, "newkey": 5.00005}
+{
+    "port": 80,
+    "newkey": 5.00005,
+    "hostname": "localhost",
+    "credentials": {
+        "password": "secret",
+        "username": "milanoid"
+    }
+}
