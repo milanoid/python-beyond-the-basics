@@ -17,26 +17,19 @@ class ConfigDict(dict):
     config_directory = 'c:\\configs\\'
 
     def __init__(self, config_file):
-        self._config_file = os.path.join(self.config_directory, config_file)
+        self._config_file = os.path.join(ConfigDict.config_directory, config_file + '.pickle')
         if not os.path.isfile(self._config_file):
-            try:
-                file = open(self._config_file, mode='w')
-                file.write("{}")
-                file.close()
-            except IOError:
-                raise IOError('could not write file in path {path}'.format(path=self._config_file))
+            with open(self._config_file, 'wb') as fh:
+                pickle.dump({}, fh)
 
-        with open(self._config_file) as file:
-            for line in file:
-                line = line.rstrip()
-                key, value = line.split('=', 1)
-                dict.__setitem__(self, key, value)
+        with open(self._config_file, 'rb') as fh:
+            pkl = pickle.load(fh)
+            self.update(pkl)
 
     def __setitem__(self, key, value):
         dict.__setitem__(self, key, value)
-        with open(self._config_file, 'w') as file:
-            for key, value in self.items():
-                file.write("{key}={value}\n".format(key=key, value=self[key]))
+        with open(self._config_file, 'wb') as fh:
+            pickle.dump(dict, fh)
 
     def __getitem__(self, key):
         if key not in self:
@@ -44,5 +37,7 @@ class ConfigDict(dict):
         return dict.__getitem__(self, key)
 
 
-cd = ConfigDict(config_file='config.pickle')
+cd = ConfigDict(config_file='test')
 cd['key1'] = 'value1'
+
+print(cd)
