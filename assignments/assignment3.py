@@ -24,6 +24,7 @@ class ConfigDict(dict):
         if os.path.isfile(self._config_file):
             with open(self._config_file) as file:
                 for line in file:
+                    line = line.rstrip()
                     key, value = line.split('=', 1)
                     dict.__setitem__(self, key, value)
 
