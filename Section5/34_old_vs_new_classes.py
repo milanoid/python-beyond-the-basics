@@ -1,3 +1,9 @@
+"""
+Guido's history of the development of Python
+http://python-history.blogspot.com/2010/06/inside-story-on-new-style-classes.html
+"""
+
+
 # old style "Classic" class
 class OldClass():
     pass
