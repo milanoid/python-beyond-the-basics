@@ -1,0 +1,5 @@
+hosntame=localhost
+port=port
+password=secret
+username=milanoid
+secret_password=^$#&^&
