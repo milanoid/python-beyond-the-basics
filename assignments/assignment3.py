@@ -33,4 +33,3 @@ class ConfigDict(dict):
         with open(self._config_file, 'w') as file:
             for key, value in self.items():
                 file.write("{key}={value}\n".format(key=key, value=self[key]))
-        file.close()
