@@ -14,16 +14,18 @@ to the configuration file is that any Python programmer will immediately know ho
 The instructions are so simple you almost don't need documentation:  "create a new ConfigDict object,
 then read and write keys and values as desired" -- that's it.
 """
+import os
 
 
 class ConfigDict(dict):
 
     def __init__(self, config_file):
         self._config_file = config_file
-        with open(self._config_file) as file:
-            for line in file:
-                key, value = line.split('=', 1)
-                dict.__setitem__(self, key, value)
+        if os.path.isfile(self._config_file):
+            with open(self._config_file) as file:
+                for line in file:
+                    key, value = line.split('=', 1)
+                    dict.__setitem__(self, key, value)
 
     def __setitem__(self, key, value):
         dict.__setitem__(self, key, value)
