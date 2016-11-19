@@ -17,7 +17,6 @@ then read and write keys and values as desired" -- that's it.
 
 
 class ConfigDict(dict):
-    _config_file = ''
 
     def __init__(self, config_file):
         self._config_file = config_file
@@ -29,6 +28,6 @@ class ConfigDict(dict):
     def __setitem__(self, key, value):
         dict.__setitem__(self, key, value)
         with open(self._config_file, 'w') as file:
-            for key in self.keys():
+            for key, value in self.items():
                 file.write("{key}={value}\n".format(key=key, value=self[key]))
         file.close()
